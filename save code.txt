@@ -1,0 +1,11 @@
+"""    # Check if the required fields are provided in the request
+    required_fields = [
+        'id', 'uuid', 'externalId', 'dataSourceId', 'userName', 'studentId',
+        'gender', 'created', 'modified', 'institutionRoleIds',
+        'systemRoleIds', 'availability', 'name', 'contact', 'avatar'
+    ]
+    
+    for field in required_fields:
+        if field not in user_data:
+            return jsonify({"error": f"Missing required field: {field}"}), 400
+    """

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h3>Mapua Parentlink</h3>
+    <br><br>
+
+    <h2>Hello {{given_name}} {{family_name}},</h2>
+    <h3>Thank you for using Mapua ParentLink.</h3>
+    <br>
+    <h2>Here are your account details:</h3>
+    <ul>
+        <li style="font-size: 15px"><strong>Username:</strong> {{user_name}}</li>
+        <li style="font-size: 15px"><strong>Email:</strong> {{email}}</li>
+        <li style="font-size: 15px"><strong>Role:</strong> {{role}}</li>
+    </ul>
+    <br>
+    <h2>How to access your account?</h2>
+    <ol>
+        <li style="font-size: 15px">Login to this website here: <a href="{{login_url}}">www.malayanmindanao-test.blackboard.com</a></li>
+        <li style="font-size: 15px">Fill up information "(Username, Password)" in the respectable input boxes.</li>
+        <li style="font-size: 15px">Click the login button.</li>
+    </ol>
+    <br>
+    <p>Please contact support if you have any questions.</p>
+    <p>Best regards,<br><strong>The Mapua ParentLink Team</strong></p>
+    <footer>
+        <img src="{{ url_for('static', filename='footer.jpg') }}">
+    </footer>
+</body>
+</html>
