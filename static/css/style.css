@@ -1,0 +1,591 @@
+@font-face {
+  font-family: "Muli-Regular";
+  src: url("../fonts/muli/Muli-Regular.ttf"); }
+@font-face {
+  font-family: "Muli-SemiBold";
+  src: url("../fonts/muli/Muli-SemiBold.ttf"); }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 15px;
+  color: #999;
+  margin: 0; }
+
+:focus {
+  outline: none; }
+
+textarea {
+  resize: none; }
+
+input, textarea, select, button {
+  font-size: 15px; }
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  margin: 0; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+textarea {
+  resize: none; }
+
+img {
+  max-width: 100%; }
+
+.wrapper {
+  height: 100vh;
+  background: #f9f6f1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.wizard {
+  width: 1100px;
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+}
+
+.wizard > .steps {
+	position: absolute;
+	top: 25%;
+	right: 33.2%;
+	transform: translateX(50%);
+	z-index: 9;
+}
+
+.wizard > .steps .current-info, .wizard > .steps .number {
+  display: none; }
+
+.wizard > .steps ul {
+  display: flex;
+  justify-content: center; }
+
+.wizard > .steps li a {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-right: 78px;
+  position: relative; }
+  .wizard > .steps li a:before {
+    content: "";
+    width: 58px;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    right: 22px;
+    top: 5px; }
+  .wizard > .steps li a:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #000000;
+    position: absolute;
+    left: -68px;
+    top: 5px;
+    transition: all 0.6s ease; }
+.wizard > .steps li.first a {
+  background: #000000; }
+.wizard > .steps li.checked a {
+  background: #000000; }
+  .wizard > .steps li.checked a:after {
+    width: 58px; }
+.wizard > .steps li:last-child a {
+  margin-right: 0; }
+.wizard > .steps li:first-child a:before {
+  display: none; }
+.wizard > .steps li:first-child a:after {
+  display: none; }
+
+.wizard > .content {
+  position: relative;
+  height: 521px; }
+
+.inner {
+  display: flex;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: 0 auto;
+  height: 590px; 
+}
+
+.image-holder {
+  height: 100%; /* Make image holder take full height */
+  overflow: hidden;
+
+}
+
+.form-content {
+  width: 60%;
+  padding-top: 48px;
+  padding-left: 20px;
+  padding-right: 10px; 
+  margin-left: 3%;
+}
+
+.form-header {
+  text-align: center;
+  position: relative;
+  margin-left: 0%;
+}
+
+h3 {
+  font-family: 'Inter';
+  font-size: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  padding: 5px 15px;
+  display: inline-block;
+  border: 1px solid #dad8e4;
+  margin-bottom: 80px; }
+
+p {
+  font-family: 'Inter';
+  font-size: 25px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 26px; }
+
+.form-row {
+  display: flex;
+  margin-bottom: 18px; }
+  .form-row .form-holder {
+    width: 100%;
+    margin-right: 25px; }
+    .form-row .form-holder:last-child {
+      margin-right: 0; }
+    .form-row .form-holder.w-100 {
+      width: 100%;
+      margin-right: 0; }
+  .form-row .select {
+    width: 100%;
+    margin-right: 30px; }
+    .form-row .select .form-holder {
+      width: 100%;
+      margin-right: 0; }
+
+.select {
+  position: relative; }
+  .select .select-control {
+    height: 37px;
+    border-bottom: 2px solid #e6e6e6;
+    width: 100%;
+    color: #999;
+    display: flex;
+    align-items: center;
+    cursor: pointer; }
+  .select .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: #fff;
+    z-index: 9;
+    border: 1px solid #81acee; }
+    .select .dropdown li {
+      padding: 5px 10px; }
+      .select .dropdown li:hover {
+        background: #81acee;
+        color: #fff; }
+
+.form-holder {
+  position: relative; }
+  .form-holder i {
+    position: absolute;
+    bottom: 7px;
+    right: 0;
+    font-size: 17px; }
+
+.form-control {
+  height: 37px;
+  border: none;
+  border-bottom: 2px solid #e6e6e6;
+  width: 100%;
+  color: #666; }
+  .form-control:focus {
+    border-color: #e9e0cf; }
+  .form-control::-webkit-input-placeholder {
+    color: #999; }
+  .form-control::-moz-placeholder {
+    color: #999; }
+  .form-control:-ms-input-placeholder {
+    color: #999; }
+  .form-control:-moz-placeholder {
+    color: #999; }
+
+select.form-control {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: #999; }
+  select.form-control option[value=""][disabled] {
+    display: none; }
+
+  .actions {
+    position: absolute;
+    top: 500px;
+    right: 51px;
+  }
+  
+  .actions ul {
+    display: flex;
+    gap: 20px; /* Ensures consistent spacing between buttons */
+  }
+  
+  .actions li a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    height: 45px;
+    padding: 0;
+    border: none;
+    background-color: #000000; /* Black background for primary theme */
+    color: #ffffff; /* White text */
+    font-size: 1rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .actions li a:hover {
+    background-color: #333333; /* Darker shade on hover */
+  }
+  
+  .actions li:first-child a {
+    background-color: #ffffff; /* White background for secondary button */
+    color: #000000; /* Black text */
+  }
+  
+  .actions li:first-child a:hover {
+    background-color: #e0e0e0; /* Light grey on hover */
+  }
+  
+  .actions li:last-child a {
+    background-color: #6d7f52; /* Custom color for special action */
+    color: #ffffff;
+  }
+  
+  .actions li:last-child a:hover {
+    background-color: #849963; /* Slightly lighter shade for hover effect */
+  }
+  
+  .actions li[aria-disabled="true"] a {
+    opacity: 0.5;
+    pointer-events: none; /* Disable interaction on disabled buttons */
+  }
+  
+  .actions li[aria-disabled="false"] ~ li a {
+    background-color: #000000; /* Consistent color for enabled state */
+  }
+  
+  .actions li[aria-disabled="false"] ~ li a:hover {
+    background-color: #404040; /* Darker shade on hover */
+  }
+  
+
+/* Checkbox Tick */
+.checkbox-tick label {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 30px; /* Increased padding for better spacing */
+  position: relative;
+  font-size: 1rem; /* Larger font size */
+}
+
+.checkbox-tick label.male {
+  margin-right: 40px; /* Increased space between male and female options */
+}
+
+.checkbox-tick input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-tick input:checked ~ .checkmark {
+  background: #000000; /* Darker background color for checked state */
+}
+
+.checkbox-tick input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-tick .checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 20px; /* Increased height */
+  width: 20px; /* Increased width */
+  border: 2px solid #ffffff; /* Darker border */
+  border-radius: 50%;
+  font-family: Material-Design-Iconic-Font;
+  color: #fff;
+  font-size: 16px; /* Increased icon font size */
+}
+
+.checkbox-tick .checkmark:after {
+  top: 0;
+  left: 4px;
+  position: absolute;
+  display: none;
+  content: '\f26b';
+}
+
+/* Checkbox Circle */
+.checkbox-circle {
+  position: relative;
+  padding-left: 30px; /* Increased padding for more space */
+  margin-top: 24px; /* Unified margin top */
+  width: 100%; /* Full width to make alignment easier */
+}
+
+.checkbox-circle label {
+  cursor: pointer;
+  color: #666;
+  font-size: 1rem; /* Larger font size */
+  line-height: 1.9;
+  transform: translateY(-3px); /* Slightly adjusted for better alignment */
+}
+
+.checkbox-circle label a {
+  color: #ffffff;
+}
+
+.checkbox-circle label a:hover {
+  color: #2c2c2c;
+}
+
+.checkbox-circle input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-circle input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-circle .checkmark {
+  position: absolute;
+  top: 5px;
+  right: 605px;
+  height: 20px; /* Increased size */
+  width: 20px; /* Increased size */
+  border-radius: 50%;
+  border: 2px solid #ffffff; /* Darker border color */
+}
+
+.checkbox-circle .checkmark:after {
+  content: "";
+  top: 3.3px;
+  left: 2.3px;
+  width: 10px; /* Increased inner circle size */
+  height: 10px; /* Increased inner circle size */
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  display: none;
+}
+
+
+@media (max-width: 991px) {
+  .wizard {
+    max-width: 768px; }
+
+  .image-holder img {
+    height: 521px;
+    object-fit: cover; } }
+@media (max-width: 767px) {
+  .inner {
+    display: block;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none; }
+
+  .image-holder {
+    width: 100%; }
+    .image-holder img {
+      width: 100%; }
+
+  .form-content {
+    width: 100%;
+    padding: 50px 20px 30px; }
+
+  .form-row {
+    display: block; }
+    .form-row .form-holder, .form-row .select {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 18px; }
+
+  .wrapper {
+    height: 1201px;
+    background: none; }
+
+  .checkbox-circle {
+    width: 100%; }
+
+  .wizard {
+    height: 100%; }
+    .wizard > .steps {
+      right: 50%;
+      top: 52%;
+      transform: translateX(50%); }
+
+  .actions {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 3%; } }
+
+  /* Custom Form Control Styling */
+.custom-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.custom-form-label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.custom-form-control {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #000000;
+  background-color: #f8f8f8;
+  border: 1px solid #555;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.custom-form-control:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 0.2rem rgba(0,0,0, 0.25);
+}
+
+.checkbox-circle label {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: #ffffff;
+}
+
+.checkbox-circle input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.is-invalid {
+  border-color: #dc3545; /* Red border for invalid inputs */
+}
+
+.checkbox-circle.error label {
+  color: #dc3545; /* Red color for error */
+  font-weight: bold;
+}
+.checkbox-circle.error .checkmark {
+  border-color: #dc3545;
+}
+
+/* Adjustments for different screen sizes */
+@media (max-width: 992px) { /* Tablets and smaller screens */
+  /* Make each form section responsive */
+  .col-xl-8 {
+      max-width: 100%; /* Full width for the form container */
+  }
+
+  .inner {
+      padding: 1.5rem; /* Reduced padding on medium screens */
+  }
+
+  /* Adjust .form-row to allow flexible wrapping */
+  .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem; /* Space between items */
+  }
+
+  /* Two columns layout on tablets */
+  .form-holder {
+      flex: 0 0 48%; /* Each item takes up 48% to fit two per row */
+      min-width: 200px; /* Minimum width for better alignment */
+  }
+
+  /* Centering and resizing image holders */
+  .image-holder img {
+      width: 80px; /* Resize image for tablets */
+      margin: 0 auto;
+      display: block;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile screens */
+  /* Full width on mobile for the form container */
+  .col-xl-8 {
+      max-width: 100%;
+  }
+
+  /* Stack all form fields in a single column */
+  .form-holder {
+      flex: 0 0 100%; /* Stack items in one column */
+      min-width: unset; /* Reset minimum width */
+  }
+
+  .inner {
+      padding: 1rem; /* Even smaller padding on mobile */
+  }
+
+  /* Responsive image sizing */
+  .image-holder img {
+      width: 60px; /* Smaller image size for mobile */
+  }
+
+  /* Centered text and form alignment for small screens */
+  .form-content,
+  .form-header,
+  .form-row {
+      text-align: center;
+  }
+
+  /* Full-width button */
+  .btn {
+      width: 100%;
+      max-width: 200px;
+      margin: 1rem auto;
+      display: block;
+  }
+}
+
+@media (max-width: 576px) { /* Extra small screens */
+  /* Adjust font sizes and padding for smaller screens */
+  .form-header h3 {
+      font-size: 1.25rem;
+  }
+
+  .inner {
+      padding: 0.75rem;
+  }
+
+  .form-content p {
+      font-size: 0.875rem;
+  }
+}
+
+
+/*# sourceMappingURL=style.css.map */
