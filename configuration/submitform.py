@@ -30,57 +30,39 @@ def registration_form():
     city = request.form.get('city')
 
     student_id = request.form.get('student-id')
-    #student_email = request.form.get('student-email')
+    
     
     print(f"First Name: {first_name}, Middle Name: {middle_name}, Last Name: {last_name}")
     print(f"Email: {email}, Username: {username}, Password: {password}")
     print(f"Gender: {gender}, Birth Date: {birth_date}, Company: {company}")
-    print(f"Street: {street}, City: {city}, Student ID: {student_id}")
+    print(f"Street: {street}, City: {city}")
     
-    if middle_name is None:
-        registration_data = {
-            'studentID': student_id,
-            'userName': username,
-            'password': password,
-            'gender': gender,
-            'institutionRoleIds': ["OBSERVER"],
-            'systemRoleIds': ["User"],
-            'availability': {"available": "Yes"},
-            'name': {
-                'given': f"{first_name}",
-                'family': last_name,
-                },
-            'contact': {
-                "email": email
-                },
-            'birthDate': birth_date,
-            'company': company,
-            'street': street,
-            'city': city
-        }
-
-        return registration_data
     
-    else:
-        registration_data = {
-            'studentID': student_id,
-            'userName': username,
-            'password': password,
-            'gender': gender,
-            'institutionRoleIds': ["OBSERVER"],
-            'systemRoleIds': ["User"],
-            'availability': {"available": "Yes"},
-            'name': {
-                'given': f"{first_name}, {middle_name}",
-                'family': last_name,
-                },
-            'contact': {
-                "email": email
-                },
-            'birthDate': birth_date,
-            'company': company,
-            'street': street,
-            'city': city
-        }
+    
+    registration_data = {
+        'studentId': student_id,
+        'userName': username,
+        'password': password,
+        'gender': gender,
+        'institutionRoleIds': ["OBSERVER"],
+        'systemRoleIds': ["Observer"],
+        'availability': {"available": "Yes"},
+        'name': {
+            'given': f"{first_name}, {middle_name}" if middle_name else first_name,
+            'family': last_name,
+        },
+        'contact': {
+            "email": email
+        },
+        'birthDate': birth_date,
+        'job': {
+            "company": company
+        },
+        'address': {
+            "street1": street,
+            "city": city
+        },
+    }
 
-        return registration_data
+    
+    return registration_data

@@ -24,7 +24,6 @@ def get_access_token():
         )
 
         if response.status_code == 200:
-            print("Connected to Blackboard API")
             return response.json().get('access_token')
         else:
             print(f"Failed to get access token: {response.status_code} - {response.text}")
