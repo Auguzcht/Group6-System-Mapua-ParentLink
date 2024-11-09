@@ -17,9 +17,11 @@
   <!-- Icon Font Stylesheet -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <!-- Main Bootstrap CSS -->
   <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="css/register.css">
 
   <style>
 
@@ -63,39 +65,136 @@
        url('fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+</style>
 
+<style type="text/css">
+  body{margin-top:20px;}
+  .section_padding_130 {
+      padding-top: 130px;
+      padding-bottom: 130px;
+  }
+  .faq_area {
+      position: relative;
+      z-index: 1;
+  }
+
+  .faq-accordian {
+    background-color: rgb(17, 17, 17);
+      position: relative;
+      z-index: 1;
+  }
+  .faq-accordian .card {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1.5rem;
+  }
+  .faq-accordian .card:last-child {
+      margin-bottom: 0;
+  }
+  .faq-accordian .card .card-header {
+      padding: 0;
+      border-bottom-color: #ebebeb;
+  }
+  .faq-accordian .card .card-header h6 {
+      cursor: pointer;
+      padding: 1.75rem 2rem;
+      color: #464644;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -ms-grid-row-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+  }
+  .faq-accordian .card .card-header h6 span {
+      font-size: 1.5rem;
+  }
+  .faq-accordian .card .card-header h6.collapsed {
+      color: #000000;
+  }
+  .faq-accordian .card .card-header h6.collapsed span {
+      -webkit-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+  }
+  .faq-accordian .card .card-body {
+      padding: 1.75rem 2rem;
+  }
+  .faq-accordian .card .card-body p:last-child {
+      margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 575px) {
+      .support-button p {
+          font-size: 14px;
+      }
+  }
+
+  .support-button i {
+      color: #ffffff;
+      font-size: 1.25rem;
+  }
+  @media only screen and (max-width: 575px) {
+      .support-button i {
+          font-size: 1rem;
+      }
+  }
+
+  .support-button a {
+      text-transform: capitalize;
+      color: #ffffff;
+  }
+  @media only screen and (max-width: 575px) {
+      .support-button a {
+          font-size: 13px;
+      }
+  }
+
+    </style>
 </style>
 
   </head>
 
   <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
 
-    <nav id="navScroll" class="navbar navbar-dark fixed-top px-vw-5 glassBG" tabindex="0">
-  <div class="container">
-    <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-  <img src="img/parentlink (1).ico" alt="Your Logo" width="40" height="40" class="bi bi-stack">
-  <span class="ms-md-1 mt-1 fw-bolder me-md-5">ParentLink</span>
-</a>
-
-<!-- Navbar Links -->
-<ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
-  <li class="nav-item">
-    <a class="nav-link fs-5" href="index.html" aria-label="Homepage">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link fs-5" href="#About-Section" aria-label="About Us Section">About Us</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link fs-5" href="content.html" aria-label="Terms and Conditions Page">Terms & Privacy</a>
-  </li>
-</ul>
-
-<!-- Login Button -->
-<a href="login.html" aria-label="Login Page" class="btn btn-outline-light">
-  <small>Login Here</small>
-</a>
-</div>
-</nav>
+    <nav id="navScroll" class="navbar navbar-dark fixed-top px-vw-6 glassBG" tabindex="0">
+      <div class="container">
+        <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+          <img src="img/parentlink (1).ico" alt="Your Logo" width="40" height="40" class="bi bi-stack">
+          <span class="ms-md-1 mt-1 fw-bolder me-lg-6">ParentLink</span>
+        </a>
+  
+        <!-- Navbar Links -->
+        <ul class="navbar-nav me-auto mb-1 mb-lg-2 list-group list-group-horizontal">
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="#About-Section" aria-label="About Us Section">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="#Features-Section" aria-label="Features Section">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="#Testimonies-Section" aria-label="Testimonies Section">Testimonies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="#FAQs-Section" aria-label="Faqs Section">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="#Team-Section" aria-label="Team Section">Our Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="#Contact-Section" aria-label="Contact Us Section">Contact Us</a>
+          </li>
+          <li>
+            <a class="nav-link fs-6" href="content.html" aria-label="Resources Page">Resources</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+  
 
   <main>
       <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
@@ -114,7 +213,7 @@
       <p class="lead text-secondary">At <i>Mapúa ParentLink</i>, we make it easy for parents to monitor their child’s courses and progress via Blackboard Ultra. Secure, efficient, and designed for your peace of mind.</p>
     </div>
     <div class="col-12 text-center">
-      <a href="register.html" class="btn btn-xl btn-light">Register Now
+      <a href="#Register-Section" class="btn btn-xl btn-light">Register Now
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 </svg>
@@ -168,28 +267,27 @@
   </div>
 </div>
 
-<div class="bg-black py-vh-3">
+<div class="bg-black py-vh-3" id="Features-Section">
   <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-
-  <div class="row gx-5" id="Features-Section">
+  <div class="row gx-5">
     <div class="col-12 col-md-6">
       <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract3.webp" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="img/Registration.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
-            <h2 class="fw-lighter">Parent Registration</h2>
-            <p class="pb-4 text-secondary">Parents can easily register by providing basic information as well as their child's name or student ID. This ensures that the system links the correct parent to the correct student, creating a secure and effective connection.</p>
-            <a href="register.html" class="link-fancy link-fancy-light">Register here</a>
+            <h2 class="fw-lighter">Quick & Easy Registration</h2>
+            <p class="pb-4 text-secondary">Sign up effortlessly by entering your details and your child’s student information. Our system securely connects you to your child’s academic records, giving you instant access to their progress via Blackboard Ultra.</p>
+            <a href="#Register-Section" class="link-fancy link-fancy-light">Register here</a>
           </div>
         </div>
       </div>
 
       <div class="card bg-transparent" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract2.webp" width="582" height="442" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="img/Email.jpg" width="582" height="442" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
-            <h2 class="fw-lighter">Automatic Observer Account Generation</h2>
-            <p class="pb-4 text-secondary">Once approved, the system generates a Blackboard Ultra observer account for the parent, automatically linking them to their child's courses. This simplifies the process for both parents and administrators.</p>
+            <h2 class="fw-lighter">Email Notification</h2>
+            <p class="pb-4 text-secondary">After registering, you'll receive an email with your Blackboard credentials and a link to log in. Access your child’s grades, assignments, and updates in real-time.</p>
             <a href="content.html#provisioning-overview" class="link-fancy link-fancy-light">Read more</a>
           </div>
         </div>
@@ -197,15 +295,15 @@
     </div>
     <div class="col-12 col-md-6">
       <div class="p-5 pt-0 mt-5" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter">How does it work?</span>
-        <h2 class="display-3">Discover how we empower parents with the tools they need to stay engaged in their child's academic journey.</h2>
+        <span class="h5 text-secondary fw-lighter">Features</span>
+        <h2 class="display-4">How we empower parents with the tools they need to stay engaged in their child's academic journey.</h2>
       </div>
       <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract17.webp" width="582" height="390" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="img/Observer.png" width="582" height="390" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
-            <h2 class="fw-lighter">Admin Approval</h2>
-            <p class="pb-4 text-secondary">Once a parent registers, an admin can review the application, approve it, and trigger the system to automatically generate a Blackboard Ultra observer account, ensuring only verified users gain access.</p>
+            <h2 class="fw-lighter">Automatic Observer Account Generation</h2>
+            <p class="pb-4 text-secondary">Once registered, parents are automatically given observer access to Blackboard Ultra, linking directly to their child's courses. No extra setup needed!</p>
             <a href="content.html#provisioning-overview" class="link-fancy link-fancy-light">Read more</a>
           </div>
         </div>
@@ -213,10 +311,10 @@
 
       <div class="card bg-transparent" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract4.webp" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="img/Blackboard.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
-            <h2 class="fw-lighter">Email Notification & Access</h2>
-            <p class="pb-4 text-secondary">Upon approval, the parent receives an email containing their observer account credentials and a direct link to Blackboard, allowing them to immediately log in and view their child’s academic progress.</p>
+            <h2 class="fw-lighter">Instant Access to Blackboard</h2>
+            <p class="pb-4 text-secondary">With just one click, log in to Blackboard and stay up to date with your child’s academic journey. No complicated steps—just simple, secure access.</p>
             <a href="content.html#provisioning-overview" class="link-fancy link-fancy-light">Read more</a>
           </div>
         </div>
@@ -225,161 +323,7 @@
   </div>
 </div>
 
-</div>
-<div class="bg-dark position-relative">
-  <div class="container px-vw-5 py-vh-3">
-    <div class="row d-flex align-items-center">
-      <div class="text-center bg-dark rounded-5" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter">Our Team</span>
-        <h3 class="display-4">Meet Our Team Members</h3>
-      </div>
-
-      <div class="row g-4 px-vw-1">
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
-            <div class="team-item">
-                <div class="d-flex">
-                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/profile.php?id=100005816176885"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/alfred-nodado-b24647251/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <img class="img-fluid rounded w-100" src="img/1.png" alt="">
-                </div>
-                <div class="px-4 py-3">
-                    <h5 class="fw-bold m-0 text-primary">Alfred Nodado</h5>
-                    <small class="m-0 text-primary">Front-end Developer | Leader</small>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
-            <div class="team-item">
-                <div class="d-flex">
-                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/jeddh.jayme"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/jeddh-andrew-jayme-202202252/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <img class="img-fluid rounded w-100" src="img/2.png" alt="">
-                </div>
-                <div class="px-4 py-3">
-                    <h5 class="fw-bold m-0 text-primary">Jeddh Jayme</h5>
-                    <small class="m-0 text-primary">Content Writer | Researcher</small>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
-            <div class="team-item">
-                <div class="d-flex">
-                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/profile.php?id=61551742475149"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/raphael-mico-barrios-260834107/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <img class="img-fluid rounded w-100" src="img/4.png" alt="">
-                </div>
-                <div class="px-4 py-3">
-                    <h5 class="fw-bold m-0 text-primary">Mico Barrios</h5>
-                    <small class="m-0 text-primary">Back-End Developer | Tester</small>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
-            <div class="team-item">
-                <div class="d-flex">
-                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/mikaella.gorgonio"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/mikaella-summer-gorgonio-7737222b8/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <img class="img-fluid rounded w-100" src="img/3.png" alt="">
-                </div>
-                <div class="px-4 py-3">
-                    <h5 class="fw-bold m-0 text-primary">Mikaella Gorgonio</h5>
-                    <small class="m-0 text-primary">Content Writer | Researcher</small>
-                </div>
-            </div>
-        </div>      
-    </div>
-  </div>
-</div>
-
-<div class="bg-black">
-  <div class="container px-vw-5 py-vh-5">
-    <div class="row d-flex align-items-center">
-      <!-- Background Image Section -->
-      <div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url(img/webp/abstract12.webp);">
-        <!-- Black Background Overlay with Content -->
-        <div class="container bg-dark px-vw-5 py-vh-3 rounded-5 shadow">
-          <!-- Headers Above the Form and Maps -->
-          <div class="text-center" data-aos="zoom-in-right">
-            <span class="h5 text-secondary fw-lighter">Get in Touch</span>
-            <h2 class="display-4 mb-4">We’d Love to Hear from You!</h2>
-          </div>
-
-          <!-- Navigation Tabs for Contact Form and Google Maps -->
-          <nav class="d-flex justify-content-center">
-            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactForm" type="button" role="tab" aria-controls="nav-ContactForm" aria-selected="true">
-                <h5>Contact Form</h5>
-              </button>
-
-              <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactMap" type="button" role="tab" aria-controls="nav-ContactMap" aria-selected="false">
-                <h5>Google Maps</h5>
-              </button>
-            </div>
-          </nav>
-
-          <!-- Tab Content (Contact Form and Google Maps) -->
-          <div class="tab-content my-3" id="nav-tabContent">
-            <!-- Contact Form Tab -->
-            <div class="tab-pane fade active show" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
-              <form class="custom-form">
-                <!-- First Row: Full name and Email address -->
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12 mb-3">
-                    <input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Full name" required="">
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-12 mb-3">
-                    <input type="email" name="contact-email" id="contact-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
-                  </div>
-                </div>
-
-                <!-- Second Row: Company (Optional) -->
-                <div class="row">
-                  <div class="col-12 mb-3">
-                    <input type="text" class="form-control" id="company" placeholder="Company (Optional)">
-                  </div>
-                </div>
-
-                <!-- Third Row: Message textarea -->
-                <div class="row">
-                  <div class="col-12 mb-3">
-                    <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
-                  </div>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-xl btn-light">Send Message</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-
-            <!-- Google Maps Tab -->
-            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel" aria-labelledby="nav-ContactMap-tab">
-              <div class="google-map-wrapper" id="google-map-wrapper">
-                <iframe class="google-map" src="https://maps.google.com/maps?q=Map%C3%BAa%20Malayan%20Colleges%20Mindanao&t=m&z=15&output=embed&iwloc=near" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-  <div class="bg-dark py-vh-5">
+<div class="bg-dark py-vh-5" id="Testimonies-Section">
   <div class="container px-vw-5">
     <div class="row d-flex gx-5 align-items-center">
       <div class="col-12 col-lg-6">
@@ -505,6 +449,423 @@
   </div>
   </div>
 
+  <!-- FAQ Section -->
+<div class="bg-black" id="FAQs-Section">
+  <div class="faq_area section_padding_130">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-12 col-sm-8 col-lg-6">
+                  <!-- Section Heading-->
+                  <div class="section_heading text-center" data-aos="fade-up" data-aos-delay="100">
+                      <h3><span>Frequently </span> Asked Questions</h3>
+                      <p>Find the information you need to get started with ParentLink and maximize your experience.</p>
+                      <div class="line"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="row justify-content-center">
+              <!-- FAQ Area-->
+              <div class="col-12 col-sm-10 col-lg-8 faq-content-wrapper">
+                  <div class="accordion faq-accordian text-primary" id="faqAccordion">
+                      
+                      <!-- FAQ Item 1 -->
+                      <div class="card border-0" data-aos="fade-up" data-aos-delay="200">
+                          <div class="card-header" id="headingOne">
+                              <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  How do I create an account on ParentLink?<span class="lni-chevron-up"></span>
+                              </h6>
+                          </div>
+                          <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                              <div class="card-body">
+                                  <p>To create an account, navigate to the registration page, fill out the required information, and submit the form. You will receive an email confirmation to activate your account.</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 2 -->
+                      <div class="card border-0" data-aos="fade-up" data-aos-delay="300">
+                          <div class="card-header" id="headingTwo">
+                              <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                  What should I do if I forget my password?<span class="lni-chevron-up"></span>
+                              </h6>
+                          </div>
+                          <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                              <div class="card-body">
+                                  <p>If you forget your password, head over to the Contact Us section, fill in your information and a query, and we’ll send you the password associated to your account.</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 3 -->
+                      <div class="card border-0" data-aos="fade-up" data-aos-delay="400">
+                          <div class="card-header" id="headingThree">
+                              <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                  How does ParentLink integrate with Blackboard?<span class="lni-chevron-up"></span>
+                              </h6>
+                          </div>
+                          <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                              <div class="card-body">
+                                  <p>ParentLink uses Blackboard's API to retrieve real-time data, including grades, attendance, and course progress. This integration allows parents to monitor their child’s academic performance effectively.</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 4 -->
+                      <div class="card border-0" data-aos="fade-up" data-aos-delay="500">
+                          <div class="card-header" id="headingFour">
+                              <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                  Can I monitor multiple students with one account?<span class="lni-chevron-up"></span>
+                              </h6>
+                          </div>
+                          <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                              <div class="card-body">
+                                  <p>Yes, you can monitor multiple students by linking your ParentLink account with each child’s Blackboard profile. This allows you to view each student’s academic details in one place.</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 5 -->
+                      <div class="card border-0" data-aos="fade-up" data-aos-delay="600">
+                          <div class="card-header" id="headingFive">
+                              <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                  What kind of notifications will I receive?<span class="lni-chevron-up"></span>
+                              </h6>
+                          </div>
+                          <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                              <div class="card-body">
+                                  <p>ParentLink sends notifications to the parents' email regarding the Blackboard Ultra account credentials.</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 6 -->
+                      <div class="card border-0" data-aos="fade-up" data-aos-delay="700">
+                          <div class="card-header" id="headingSix">
+                              <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                  Is my data secure on ParentLink?<span class="lni-chevron-up"></span>
+                              </h6>
+                          </div>
+                          <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                              <div class="card-body">
+                                  <p>Yes, data security is a top priority. ParentLink uses industry-standard encryption and secure API connections to protect your personal and academic information.</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 7 -->
+                      <div class="card border-0" data-aos="fade-up" data-aos-delay="800">
+                          <div class="card-header" id="headingSeven">
+                              <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                  How do I contact support for additional help?<span class="lni-chevron-up"></span>
+                              </h6>
+                          </div>
+                          <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                              <div class="card-body">
+                                  <p>If you need assistance, visit our Contact Us section to submit a support request. Our team will respond as quickly as possible to address your concerns.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Support Button-->
+                  <div class="support-button text-center d-flex align-items-center justify-content-center mt-4" data-aos="fade-up" data-aos-delay="900">
+                      <i class="lni-emoji-sad"></i>
+                      <p class="mb-0 px-2">Can't find your answers?</p>
+                      <a href="#Contact-Section" class="link-fancy link-fancy-light"> Contact us</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+  <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade" id="Register-Section">
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video" class="position-absolute w-100 h-100 top-0 start-0" style="object-fit: cover;">
+        <source src="img/Grey Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Centered Form Content with Overlay Background -->
+    <div class="form-v10">
+      <div class="page-content">
+        <div class="form-v10-content glassBG">
+          <form class="form-detail" action="#" method="post" id="registerForm">
+
+          <!-- Left Side: General Information Section -->
+          <div class="form-left">
+            <h2 class="display-4">General Information</h2>
+          
+              <div class="form-row">
+                <input type="text" name="title" id="title" class="input-text" placeholder="Title">
+              </div>
+
+            <div class="form-group">
+              <div class="form-row form-row-1">
+                <input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required>
+              </div>
+              <div class="form-row form-row-2">
+                <input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <input type="email" name="personal_email" id="personal_email" class="input-text" placeholder="Personal Email" required>
+            </div>
+
+            <div class="form-row">
+              <input type="email" name="student_email" id="student_email" class="input-text" placeholder="Student Username (Optional)">
+            </div>
+
+            <div class="form-row">
+              <input type="text" name="student_id" id="student_id" class="input-text" placeholder="Student ID (Optional)">
+            </div>
+
+            <!-- Account Information Section (Left Side) -->
+            <h2 class="display-4">Account Information</h2>
+            <div class="form-row">
+              <input type="text" name="username" id="username" class="input-text" placeholder="Username" required>
+            </div>
+            <div class="form-row">
+              <input type="password" name="new_password" id="new_password" class="input-text" placeholder="New Password" required>
+            </div>
+            <div class="form-row">
+              <input type="password" name="verify_password" id="verify_password" class="input-text" placeholder="Verify New Password" required>
+            </div>
+
+          </div>
+
+          <div class="form-right">
+            <h2 class="display-4">Additional Information</h2>
+          
+            <!-- Gender and Birthdate (Combined Row) -->
+            <div class="form-group">
+              <div class="form-row form-row-1">
+                <select name="gender" id="gender" class="input-text" required>
+                  <option value="" disabled selected>Gender</option>
+                  <option value="not_disclosed">Not Disclosed</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="select-btn">
+                  <i class="zmdi zmdi-chevron-down"></i>
+                </span>
+              </div>
+              <div class="form-row form-row-2">
+                <input type="date" name="birthdate" id="birthdate" class="input-text" placeholder="Birthdate" required>
+              </div>
+            </div>
+          
+            <!-- Company -->
+            <div class="form-row">
+              <input type="text" name="company" id="company" class="input-text" placeholder="Company" required>
+            </div>
+          
+            <!-- Street 1 -->
+            <div class="form-row">
+              <input type="text" name="street" id="street" class="input-text" placeholder="Street" required>
+            </div>
+          
+            <!-- City and State/Province (Combined Row) -->
+            <div class="form-group">
+              <div class="form-row form-row-1">
+                <input type="text" name="city" id="city" class="input-text" placeholder="City" required>
+              </div>
+              <div class="form-row form-row-2">
+                <input type="text" name="state" id="state" class="input-text" placeholder="State/Province" required>
+              </div>
+            </div>
+          
+            <!-- Postal Code and Country (Combined Row) -->
+            <div class="form-group">
+              <div class="form-row form-row-1">
+                <input type="text" name="postal_code" id="postal_code" class="input-text" placeholder="Postal Code" required>
+              </div>
+              <div class="form-row form-row-2">
+                <input type="text" name="country" id="country" class="input-text" placeholder="Country" required>
+              </div>
+            </div>
+          
+            <!-- Mobile Phone Number with Number-Only Validation -->
+            <div class="form-row">
+              <input type="text" name="mobile_phone" id="mobile_phone" class="input-text" placeholder="Mobile Phone Number" required pattern="[0-9]+" title="Please enter a valid phone number (numbers only)">
+            </div>
+          
+            <!-- Terms and Conditions Checkbox -->
+            <div class="form-checkbox">
+              <label class="container">
+                <h6>I accept the <a href="content.html#terms" class="link-fancy link-fancy-light">Terms and Conditions</a> of your platform.</h6>
+                <input type="checkbox" name="checkbox" required>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          
+            <!-- Submit Button -->
+            <div class="form-row-last">
+              <input type="submit" name="register" class="register" value="Register Now">
+            </div>
+          </div>          
+          
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+<div class="bg-dark position-relative" id="Team-Section">
+  <div class="container px-vw-5 py-vh-3">
+    <div class="row d-flex align-items-center">
+      <div class="text-center bg-dark rounded-5" data-aos="fade">
+        <span class="h5 text-secondary fw-lighter">Our Team</span>
+        <h3 class="display-4">Meet Our Team Members</h3>
+      </div>
+
+      <div class="row g-4 px-vw-1">
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
+            <div class="team-item">
+                <div class="d-flex">
+                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/profile.php?id=100005816176885"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/alfred-nodado-b24647251/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <img class="img-fluid rounded w-100" src="img/1.png" alt="">
+                </div>
+                <div class="px-4 py-3">
+                    <h5 class="fw-bold m-0 text-primary">Alfred Nodado</h5>
+                    <small class="m-0 text-primary">Front-end Developer | Leader</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
+            <div class="team-item">
+                <div class="d-flex">
+                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/jeddh.jayme"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/jeddh-andrew-jayme-202202252/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <img class="img-fluid rounded w-100" src="img/2.png" alt="">
+                </div>
+                <div class="px-4 py-3">
+                    <h5 class="fw-bold m-0 text-primary">Jeddh Jayme</h5>
+                    <small class="m-0 text-primary">Content Writer | Researcher</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
+            <div class="team-item">
+                <div class="d-flex">
+                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/profile.php?id=61551742475149"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/raphael-mico-barrios-260834107/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <img class="img-fluid rounded w-100" src="img/4.png" alt="">
+                </div>
+                <div class="px-4 py-3">
+                    <h5 class="fw-bold m-0 text-primary">Mico Barrios</h5>
+                    <small class="m-0 text-primary">Back-End Developer | Tester</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up">
+            <div class="team-item">
+                <div class="d-flex">
+                    <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.facebook.com/mikaella.gorgonio"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square text-primary bg-white my-1" href="https://www.linkedin.com/in/mikaella-summer-gorgonio-7737222b8/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <img class="img-fluid rounded w-100" src="img/3.png" alt="">
+                </div>
+                <div class="px-4 py-3">
+                    <h5 class="fw-bold m-0 text-primary">Mikaella Gorgonio</h5>
+                    <small class="m-0 text-primary">Content Writer | Researcher</small>
+                </div>
+            </div>
+        </div>      
+    </div>
+  </div>
+</div>
+
+<div class="bg-black">
+  <div class="container px-vw-5 py-vh-5" id="Contact-Section">
+    <div class="row d-flex align-items-center">
+      <!-- Background Image Section -->
+      <div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url(img/webp/abstract12.webp);">
+        <!-- Black Background Overlay with Content -->
+        <div class="container bg-dark px-vw-5 py-vh-3 rounded-5 shadow">
+          <!-- Headers Above the Form and Maps -->
+          <div class="text-center" data-aos="zoom-in-right">
+            <span class="h5 text-secondary fw-lighter">Get in Touch</span>
+            <h2 class="display-4 mb-4">We’d Love to Hear from You!</h2>
+          </div>
+
+          <!-- Navigation Tabs for Contact Form and Google Maps -->
+          <nav class="d-flex justify-content-center">
+            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactForm" type="button" role="tab" aria-controls="nav-ContactForm" aria-selected="true">
+                <h5>Contact Form</h5>
+              </button>
+
+              <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactMap" type="button" role="tab" aria-controls="nav-ContactMap" aria-selected="false">
+                <h5>Google Maps</h5>
+              </button>
+            </div>
+          </nav>
+
+          <!-- Tab Content (Contact Form and Google Maps) -->
+          <div class="tab-content my-3" id="nav-tabContent">
+            <!-- Contact Form Tab -->
+            <div class="tab-pane fade active show" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
+              <form class="custom-form">
+                <!-- First Row: Full name and Email address -->
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-12 mb-3">
+                    <input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Full name" required="">
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-12 mb-3">
+                    <input type="email" name="contact-email" id="contact-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+                  </div>
+                </div>
+
+                <!-- Second Row: Company (Optional) -->
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <input type="text" class="form-control" id="company" placeholder="Company (Optional)">
+                  </div>
+                </div>
+
+                <!-- Third Row: Message textarea -->
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-xl btn-light">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Google Maps Tab -->
+            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel" aria-labelledby="nav-ContactMap-tab">
+              <div class="google-map-wrapper" id="google-map-wrapper">
+                <iframe class="google-map" src="https://maps.google.com/maps?q=Map%C3%BAa%20Malayan%20Colleges%20Mindanao&t=m&z=15&output=embed&iwloc=near" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   </main>
 
     <footer class="bg-black border-top border-dark">
@@ -514,11 +875,14 @@
 
 <!-- Additional Scripts and References -->
 
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/aos.js"></script>
+<script src="js/main.js"></script>
 <script>
 AOS.init({
- duration: 800, // values from 0 to 3000, with step 50ms
+ duration: 800,
 });
 </script>
 <script>
